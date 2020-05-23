@@ -1,0 +1,2 @@
+rootProject.name='IdPhoto'
+include ':app', ':landmarklibrary', ':gdxlibrary', ':utilslibrary', ':filterlibrary'
