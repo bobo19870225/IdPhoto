@@ -12,6 +12,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11"
+            }
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
     }
 
     buildTypes {
@@ -27,6 +35,12 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+    repositories {
+        flatDir {
+            // 人脸关键点检测依赖库下放到facedetectlibrary
+            dirs project(':facedetectlibrary').file('libs')
+        }
+    }
 
 }
 
@@ -41,7 +55,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':landmarklibrary')
-    implementation project(path: ':gdxlibrary')
-    implementation project(path: ':utilslibrary')
+    implementation project(':cameralibrary')
+    implementation project(':filterlibrary')
+    implementation project(':imagelibrary')
+    implementation project(':pickerlibrary')
+    implementation project(':medialibrary')
+    implementation project(':utilslibrary')
+    implementation project(':videolibrary')
 }

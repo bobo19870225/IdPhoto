@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.cgfay.camera.fragment.NormalMediaSelector;
+import com.cgfay.picker.MediaPicker;
+
 import cn.gz3create.idphoto.BR;
 import cn.gz3create.idphoto.R;
 import cn.gz3create.idphoto.databinding.FragmentHomeBinding;
@@ -38,12 +41,11 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        mViewDataBinding.album.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        mViewDataBinding.album.setOnClickListener(v -> MediaPicker.from(HomeFragment.this)
+                .showImage(true)
+                .showVideo(false)
+                .setMediaSelector(new NormalMediaSelector())
+                .show());
 
     }
 }
