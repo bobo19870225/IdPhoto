@@ -1,10 +1,12 @@
 package com.cgfay.image.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.cgfay.imagelibrary.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.cgfay.image.fragment.ImageEditedFragment;
+import com.cgfay.image.utils.StatusBarUtil;
+import com.cgfay.imagelibrary.R;
 
 public class ImageEditActivity extends AppCompatActivity {
 
@@ -17,6 +19,9 @@ public class ImageEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_edit);
+        StatusBarUtil.setTranslucentStatus(this);
+        StatusBarUtil.setRootViewFitsSystemWindows(this, false);
+        StatusBarUtil.setStatusBarDarkTheme(this, true);
         if (null == savedInstanceState) {
             ImageEditedFragment fragment = new ImageEditedFragment();
             fragment.setImagePath(getIntent().getStringExtra(IMAGE_PATH), getIntent().getBooleanExtra(DELETE_INPUT_FILE, false));

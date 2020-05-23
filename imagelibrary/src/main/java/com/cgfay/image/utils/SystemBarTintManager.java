@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.gz3create.idphoto.utils;
+package com.cgfay.image.utils;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

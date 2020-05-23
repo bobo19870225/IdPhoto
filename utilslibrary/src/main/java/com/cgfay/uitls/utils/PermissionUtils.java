@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -48,9 +49,9 @@ public final class PermissionUtils {
                     .getPackageInfo(context.getPackageName(), 0);
             targetVersion = info.applicationInfo.targetSdkVersion;
         } catch (PackageManager.NameNotFoundException e) {
-
+            e.printStackTrace();
         }
-        boolean result = false;
+        boolean result;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
                 && targetVersion >= Build.VERSION_CODES.M) {
             result = (ContextCompat.checkSelfPermission(context, permission)

@@ -7,17 +7,16 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.cgfay.imagelibrary.R;
 import com.cgfay.uitls.fragment.BackPressedDialogFragment;
@@ -50,15 +49,15 @@ public class ImageEditedFragment extends Fragment implements View.OnClickListene
     private View mContentView;
 
     // 底部按钮布局
-    private FrameLayout mLayoutButton;
+//    private FrameLayout mLayoutButton;
     // 选择页面布局
-    private LinearLayout mLayoutSelectPage;
+//    private LinearLayout mLayoutSelectPage;
     // 裁剪按钮
-    private Button mBtnCrop;
+//    private Button mBtnCrop;
     // 滤镜按钮
-    private Button mBtnFilter;
+//    private Button mBtnFilter;
     // 编辑工具箱按钮
-    private Button mBtnToolbox;
+//    private Button mBtnToolbox;
     // 工具箱布局
     private LinearLayout mLayoutToolbox;
     // 编辑工具箱返回
@@ -128,15 +127,15 @@ public class ImageEditedFragment extends Fragment implements View.OnClickListene
      */
     private void initView(View view) {
         // 选择编辑页面布局
-        mLayoutButton = (FrameLayout) view.findViewById(R.id.layout_button);
-        mLayoutSelectPage = (LinearLayout) mInflater.inflate(R.layout.view_image_fragment_button, null);
-        mLayoutButton.addView(mLayoutSelectPage);
-        mBtnCrop = (Button) mLayoutSelectPage.findViewById(R.id.btn_crop);
-        mBtnFilter = (Button) mLayoutSelectPage.findViewById(R.id.btn_filter);
-        mBtnToolbox = (Button) mLayoutSelectPage.findViewById(R.id.btn_toolbox);
-        mBtnCrop.setOnClickListener(this);
-        mBtnFilter.setOnClickListener(this);
-        mBtnToolbox.setOnClickListener(this);
+//        mLayoutButton = view.findViewById(R.id.layout_button);
+//        mLayoutSelectPage = (LinearLayout) mInflater.inflate(R.layout.view_image_fragment_button, null);
+//        mLayoutButton.addView(mLayoutSelectPage);
+//        mBtnCrop = mLayoutSelectPage.findViewById(R.id.btn_crop);
+//        mBtnFilter = mLayoutSelectPage.findViewById(R.id.btn_filter);
+//        mBtnToolbox = mLayoutSelectPage.findViewById(R.id.btn_toolbox);
+//        mBtnCrop.setOnClickListener(this);
+//        mBtnFilter.setOnClickListener(this);
+//        mBtnToolbox.setOnClickListener(this);
 
         // 默认显示滤镜编辑页面
         showFragment(FRAGMENT_FILTER);
@@ -199,25 +198,25 @@ public class ImageEditedFragment extends Fragment implements View.OnClickListene
     /**
      * 重置底部视图
      */
-    private void resetBottomView() {
-        mLayoutButton.removeAllViews();
-        mLayoutButton.addView(mLayoutSelectPage);
-        mBtnCrop.setTextColor(Color.WHITE);
-        mBtnFilter.setTextColor(Color.WHITE);
-        mBtnToolbox.setTextColor(Color.WHITE);
-    }
+//    private void resetBottomView() {
+//        mLayoutButton.removeAllViews();
+//        mLayoutButton.addView(mLayoutSelectPage);
+//        mBtnCrop.setTextColor(Color.WHITE);
+//        mBtnFilter.setTextColor(Color.WHITE);
+//        mBtnToolbox.setTextColor(Color.WHITE);
+//    }
 
     /**
      * 显示编辑页面
      * @param index
      */
     private void showFragment(int index) {
-        resetBottomView();
+//        resetBottomView();
         mCurrentFragment = index;
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         hideFragment(ft);
         if (index == FRAGMENT_CROP) {
-            mBtnCrop.setTextColor(Color.BLUE);
+//            mBtnCrop.setTextColor(Color.BLUE);
             if (mImageCropFragment == null) {
                 mImageCropFragment = new ImageCropFragment();
                 ft.add(R.id.fragment_container, mImageCropFragment);
@@ -231,7 +230,7 @@ public class ImageEditedFragment extends Fragment implements View.OnClickListene
                 mImageFilterFragment.showGLSurfaceView(false);
             }
         } else if (index == FRAGMENT_FILTER) {
-            mBtnFilter.setTextColor(Color.BLUE);
+//            mBtnFilter.setTextColor(Color.BLUE);
             if (mImageFilterFragment == null) {
                 mImageFilterFragment = new ImageFilterFragment();
                 ft.add(R.id.fragment_container, mImageFilterFragment);
@@ -292,10 +291,10 @@ public class ImageEditedFragment extends Fragment implements View.OnClickListene
             mBtnAdjust.setTextColor(Color.BLUE);
         }
 
-        if (mLayoutButton != null) {
-            mLayoutButton.removeAllViews();
-            mLayoutButton.addView(mLayoutToolbox);
-        }
+//        if (mLayoutButton != null) {
+//            mLayoutButton.removeAllViews();
+//            mLayoutButton.addView(mLayoutToolbox);
+//        }
     }
 
     /**

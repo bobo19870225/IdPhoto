@@ -9,12 +9,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +16,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.cgfay.filter.glfilter.resource.FilterHelper;
 import com.cgfay.filter.glfilter.resource.bean.ResourceData;
 import com.cgfay.filter.widget.GLImageSurfaceView;
-import com.cgfay.imagelibrary.R;
 import com.cgfay.image.activity.ImagePreviewActivity;
 import com.cgfay.image.adapter.ImageFilterAdapter;
+import com.cgfay.imagelibrary.R;
 import com.cgfay.uitls.utils.BitmapUtils;
 
 import java.io.File;
@@ -40,12 +40,12 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
 
     private View mContentView;
 
-    private Button mBtnInternal;
-    private Button mBtnCustomize;
-    private Button mBtnCollection;
-    private Button mBtnSave;
-    private Button mBtnAdd;
-    private Button mBtnSetting;
+    //    private Button mBtnInternal;
+//    private Button mBtnCustomize;
+//    private Button mBtnCollection;
+//    private Button mBtnSave;
+//    private Button mBtnAdd;
+//    private Button mBtnSetting;
 
     private FrameLayout mLayoutFilterContent;
     private GLImageSurfaceView mCainImageView;
@@ -89,29 +89,30 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
 
     /**
      * 初始化视图
+     *
      * @param view
      */
     private void initView(View view) {
         // 图片内容布局
-        mCainImageView = (GLImageSurfaceView) view.findViewById(R.id.glImageView);
+        mCainImageView = view.findViewById(R.id.glImageView);
         mCainImageView.setCaptureCallback(mCaptureCallback);
         if (mBitmap != null) {
             mCainImageView.setBitmap(mBitmap);
         }
         // 滤镜内容框
-        mLayoutFilterContent = (FrameLayout) view.findViewById(R.id.layout_filter_content);
-        mBtnInternal = (Button) view.findViewById(R.id.btn_internal);
-        mBtnInternal.setOnClickListener(this);
-        mBtnCustomize = (Button) view.findViewById(R.id.btn_customize);
-        mBtnCustomize.setOnClickListener(this);
-        mBtnCollection = (Button) view.findViewById(R.id.btn_collection);
-        mBtnCollection.setOnClickListener(this);
-        mBtnSave = (Button) view.findViewById(R.id.btn_save);
-        mBtnSave.setOnClickListener(this);
-        mBtnAdd = (Button) view.findViewById(R.id.btn_add);
-        mBtnAdd.setOnClickListener(this);
-        mBtnSetting = (Button) view.findViewById(R.id.btn_setting);
-        mBtnSetting.setOnClickListener(this);
+        mLayoutFilterContent = view.findViewById(R.id.layout_filter_content);
+//        mBtnInternal = view.findViewById(R.id.btn_internal);
+//        mBtnInternal.setOnClickListener(this);
+//        mBtnCustomize = view.findViewById(R.id.btn_customize);
+//        mBtnCustomize.setOnClickListener(this);
+//        mBtnCollection = view.findViewById(R.id.btn_collection);
+//        mBtnCollection.setOnClickListener(this);
+//        mBtnSave = view.findViewById(R.id.btn_save);
+//        mBtnSave.setOnClickListener(this);
+//        mBtnAdd = view.findViewById(R.id.btn_add);
+//        mBtnAdd.setOnClickListener(this);
+//        mBtnSetting = view.findViewById(R.id.btn_setting);
+//        mBtnSetting.setOnClickListener(this);
         showFilters();
     }
 
@@ -167,11 +168,11 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
      * 重置按钮颜色
      */
     private void resetButtonColor() {
-        mBtnInternal.setTextColor(Color.WHITE);
-        mBtnCustomize.setTextColor(Color.WHITE);
-        mBtnCollection.setTextColor(Color.WHITE);
-        mBtnAdd.setTextColor(Color.WHITE);
-        mBtnSetting.setTextColor(Color.WHITE);
+//        mBtnInternal.setTextColor(Color.WHITE);
+//        mBtnCustomize.setTextColor(Color.WHITE);
+//        mBtnCollection.setTextColor(Color.WHITE);
+//        mBtnAdd.setTextColor(Color.WHITE);
+//        mBtnSetting.setTextColor(Color.WHITE);
     }
 
     /**
@@ -179,7 +180,7 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
      */
     private void showFilters() {
         resetButtonColor();
-        mBtnInternal.setTextColor(Color.BLUE);
+//        mBtnInternal.setTextColor(Color.BLUE);
         if (mFiltersView == null) {
             mFiltersView = new RecyclerView(mActivity);
             mLayoutManager = new LinearLayoutManager(getActivity());
@@ -204,6 +205,7 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
 
     /**
      * 设置bitmap
+     *
      * @param bitmap
      */
     public void setBitmap(Bitmap bitmap) {
@@ -215,6 +217,7 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
 
     /**
      * 是否显示GLSurfaceView，解决多重fragment时显示问题
+     *
      * @param showing
      */
     public void showGLSurfaceView(boolean showing) {
@@ -245,6 +248,7 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
 
     /**
      * 获取图片缓存绝对路径
+     *
      * @param context
      * @return
      */
@@ -252,7 +256,7 @@ public class ImageFilterFragment extends Fragment implements View.OnClickListene
         String directoryPath;
         // 判断外部存储是否可用，如果不可用则使用内部存储路径
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            directoryPath =Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath();
+            directoryPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath();
         } else { // 使用内部存储缓存目录
             directoryPath = context.getCacheDir().getAbsolutePath();
         }

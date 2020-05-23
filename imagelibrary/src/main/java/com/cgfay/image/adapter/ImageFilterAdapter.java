@@ -42,10 +42,10 @@ public class ImageFilterAdapter extends RecyclerView.Adapter<ImageFilterAdapter.
     public ImageHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_image_filter_view, parent, false);
         ImageHolder viewHolder = new ImageHolder(view);
-        viewHolder.filterRoot = (LinearLayout) view.findViewById(R.id.item_filter_root);
-        viewHolder.filterPanel = (FrameLayout) view.findViewById(R.id.item_filter_panel);
-        viewHolder.filterName = (TextView) view.findViewById(R.id.item_filter_name);
-        viewHolder.filterImage = (ImageView) view.findViewById(R.id.item_filter_image);
+        viewHolder.filterRoot = view.findViewById(R.id.item_filter_root);
+        viewHolder.filterPanel = view.findViewById(R.id.item_filter_panel);
+        viewHolder.filterName = view.findViewById(R.id.item_filter_name);
+        viewHolder.filterImage = view.findViewById(R.id.item_filter_image);
         return viewHolder;
     }
 
@@ -55,8 +55,6 @@ public class ImageFilterAdapter extends RecyclerView.Adapter<ImageFilterAdapter.
         if (resourceData.thumbPath.startsWith("assets://")) {
             holder.filterImage.setImageBitmap(BitmapUtils.getImageFromAssetsFile(mContext,
                     resourceData.thumbPath.substring("assets://".length())));
-        } else {
-
         }
         holder.filterName.setText(mFilterDataList.get(position).name);
         if (position == mSelected) {

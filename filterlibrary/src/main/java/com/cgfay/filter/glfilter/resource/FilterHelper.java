@@ -38,29 +38,29 @@ public final class FilterHelper extends ResourceBaseHelper {
         // 清空旧数据
         mFilterList.clear();
         // 添加滤镜数据
-        mFilterList.add(new ResourceData("none", "assets://filter/none.zip", ResourceType.NONE, "none", "assets://thumbs/filter/source.png"));
-        mFilterList.add(new ResourceData("amaro", "assets://filter/amaro.zip", ResourceType.FILTER, "amaro", "assets://thumbs/filter/amaro.png"));
-        mFilterList.add(new ResourceData("anitque", "assets://filter/anitque.zip", ResourceType.FILTER, "anitque", "assets://thumbs/filter/anitque.png"));
-        mFilterList.add(new ResourceData("blackcat", "assets://filter/blackcat.zip", ResourceType.FILTER, "blackcat", "assets://thumbs/filter/blackcat.png"));
-        mFilterList.add(new ResourceData("blackwhite", "assets://filter/blackwhite.zip", ResourceType.FILTER, "blackwhite", "assets://thumbs/filter/blackwhite.png"));
-        mFilterList.add(new ResourceData("brooklyn", "assets://filter/brooklyn.zip", ResourceType.FILTER, "brooklyn", "assets://thumbs/filter/brooklyn.png"));
-        mFilterList.add(new ResourceData("calm", "assets://filter/calm.zip", ResourceType.FILTER, "calm", "assets://thumbs/filter/calm.png"));
-        mFilterList.add(new ResourceData("cool", "assets://filter/cool.zip", ResourceType.FILTER, "cool", "assets://thumbs/filter/cool.png"));
-        mFilterList.add(new ResourceData("earlybird", "assets://filter/earlybird.zip", ResourceType.FILTER, "earlybird", "assets://thumbs/filter/earlybird.png"));
-        mFilterList.add(new ResourceData("emerald", "assets://filter/emerald.zip", ResourceType.FILTER, "emerald", "assets://thumbs/filter/emerald.png"));
-        mFilterList.add(new ResourceData("fairytale", "assets://filter/fairytale.zip", ResourceType.FILTER, "fairytale", "assets://thumbs/filter/fairytale.png"));
-        mFilterList.add(new ResourceData("freud", "assets://filter/freud.zip", ResourceType.FILTER, "freud", "assets://thumbs/filter/freud.png"));
-        mFilterList.add(new ResourceData("healthy", "assets://filter/healthy.zip", ResourceType.FILTER, "healthy", "assets://thumbs/filter/healthy.png"));
-        mFilterList.add(new ResourceData("hefe", "assets://filter/hefe.zip", ResourceType.FILTER, "hefe", "assets://thumbs/filter/hefe.png"));
-        mFilterList.add(new ResourceData("hudson", "assets://filter/hudson.zip", ResourceType.FILTER, "hudson", "assets://thumbs/filter/hudson.png"));
-        mFilterList.add(new ResourceData("kevin", "assets://filter/kevin.zip", ResourceType.FILTER, "kevin", "assets://thumbs/filter/kevin.png"));
-        mFilterList.add(new ResourceData("latte", "assets://filter/latte.zip", ResourceType.FILTER, "latte", "assets://thumbs/filter/latte.png"));
-        mFilterList.add(new ResourceData("lomo", "assets://filter/lomo.zip", ResourceType.FILTER, "lomo", "assets://thumbs/filter/lomo.png"));
-        mFilterList.add(new ResourceData("romance", "assets://filter/romance.zip", ResourceType.FILTER, "romance", "assets://thumbs/filter/romance.png"));
-        mFilterList.add(new ResourceData("sakura", "assets://filter/sakura.zip", ResourceType.FILTER, "sakura", "assets://thumbs/filter/sakura.png"));
-        mFilterList.add(new ResourceData("sketch", "assets://filter/sketch.zip", ResourceType.FILTER, "sketch", "assets://thumbs/filter/sketch.png"));
-        mFilterList.add(new ResourceData("sunset", "assets://filter/sunset.zip", ResourceType.FILTER, "sunset", "assets://thumbs/filter/sunset.png"));
-        mFilterList.add(new ResourceData("whitecat", "assets://filter/whitecat.zip", ResourceType.FILTER, "whitecat", "assets://thumbs/filter/whitecat.png"));
+        mFilterList.add(new ResourceData("原图", "assets://filter/none.zip", ResourceType.NONE, "none", "assets://thumbs/filter/source.png"));
+        mFilterList.add(new ResourceData("明亮", "assets://filter/amaro.zip", ResourceType.FILTER, "amaro", "assets://thumbs/filter/amaro.png"));
+        mFilterList.add(new ResourceData("复古", "assets://filter/anitque.zip", ResourceType.FILTER, "anitque", "assets://thumbs/filter/anitque.png"));
+        mFilterList.add(new ResourceData("古铜", "assets://filter/blackcat.zip", ResourceType.FILTER, "blackcat", "assets://thumbs/filter/blackcat.png"));
+        mFilterList.add(new ResourceData("黑白", "assets://filter/blackwhite.zip", ResourceType.FILTER, "blackwhite", "assets://thumbs/filter/blackwhite.png"));
+        mFilterList.add(new ResourceData("布鲁克林", "assets://filter/brooklyn.zip", ResourceType.FILTER, "brooklyn", "assets://thumbs/filter/brooklyn.png"));
+        mFilterList.add(new ResourceData("宁静", "assets://filter/calm.zip", ResourceType.FILTER, "calm", "assets://thumbs/filter/calm.png"));
+        mFilterList.add(new ResourceData("冷色", "assets://filter/cool.zip", ResourceType.FILTER, "cool", "assets://thumbs/filter/cool.png"));
+        mFilterList.add(new ResourceData("清晨", "assets://filter/earlybird.zip", ResourceType.FILTER, "earlybird", "assets://thumbs/filter/earlybird.png"));
+        mFilterList.add(new ResourceData("翡翠", "assets://filter/emerald.zip", ResourceType.FILTER, "emerald", "assets://thumbs/filter/emerald.png"));
+        mFilterList.add(new ResourceData("童话", "assets://filter/fairytale.zip", ResourceType.FILTER, "fairytale", "assets://thumbs/filter/fairytale.png"));
+        mFilterList.add(new ResourceData("弗洛伊德", "assets://filter/freud.zip", ResourceType.FILTER, "freud", "assets://thumbs/filter/freud.png"));
+        mFilterList.add(new ResourceData("健康", "assets://filter/healthy.zip", ResourceType.FILTER, "healthy", "assets://thumbs/filter/healthy.png"));
+        mFilterList.add(new ResourceData("温和", "assets://filter/hefe.zip", ResourceType.FILTER, "hefe", "assets://thumbs/filter/hefe.png"));
+        mFilterList.add(new ResourceData("青春", "assets://filter/hudson.zip", ResourceType.FILTER, "hudson", "assets://thumbs/filter/hudson.png"));
+        mFilterList.add(new ResourceData("夕阳", "assets://filter/kevin.zip", ResourceType.FILTER, "kevin", "assets://thumbs/filter/kevin.png"));
+        mFilterList.add(new ResourceData("亮白", "assets://filter/latte.zip", ResourceType.FILTER, "latte", "assets://thumbs/filter/latte.png"));
+        mFilterList.add(new ResourceData("简约", "assets://filter/lomo.zip", ResourceType.FILTER, "lomo", "assets://thumbs/filter/lomo.png"));
+        mFilterList.add(new ResourceData("浪漫", "assets://filter/romance.zip", ResourceType.FILTER, "romance", "assets://thumbs/filter/romance.png"));
+        mFilterList.add(new ResourceData("樱花", "assets://filter/sakura.zip", ResourceType.FILTER, "sakura", "assets://thumbs/filter/sakura.png"));
+        mFilterList.add(new ResourceData("素描", "assets://filter/sketch.zip", ResourceType.FILTER, "sketch", "assets://thumbs/filter/sketch.png"));
+        mFilterList.add(new ResourceData("日落", "assets://filter/sunset.zip", ResourceType.FILTER, "sunset", "assets://thumbs/filter/sunset.png"));
+        mFilterList.add(new ResourceData("曝光", "assets://filter/whitecat.zip", ResourceType.FILTER, "whitecat", "assets://thumbs/filter/whitecat.png"));
 
         decompressResource(context, mFilterList);
     }

@@ -88,7 +88,7 @@ public class MediaPickerFragment extends AppCompatDialogFragment implements Medi
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof FragmentActivity) {
             mActivity = (FragmentActivity) context;
